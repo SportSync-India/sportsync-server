@@ -1,9 +1,10 @@
 {
   "name": "new-folder",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
-   "type": "module",
+   
   "scripts": {
     "dev": "nodemon index.js",
     "start": "node index.js"
