@@ -18,11 +18,8 @@ const {
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON
-app.use(
-  cors({
-    origin: ["*"],
-  })
-);
+app.use(cors());
+
 
 // Cloudinary Configuration
 cloudinary.config({
