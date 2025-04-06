@@ -1,11 +1,11 @@
-import "dotenv/config";
-import express from "express";
-import multer from "multer";
-import { v2 as cloudinary } from "cloudinary";
-import { CloudinaryStorage } from "multer-storage-cloudinary";
-import { initializeApp } from "firebase/app";
-import cors from "cors";
-import {
+require("dotenv").config();
+const express = require("express");
+const multer = require("multer");
+const cloudinary = require("cloudinary").v2;
+const { CloudinaryStorage } = require("multer-storage-cloudinary");
+const { initializeApp } = require("firebase/app");
+const cors = require("cors");
+const {
   getFirestore,
   collection,
   addDoc,
@@ -13,7 +13,8 @@ import {
   doc,
   updateDoc,
   getDoc,
-} from "firebase/firestore";
+} = require("firebase/firestore");
+
 
 const app = express();
 app.use(express.json()); // Middleware to parse JSON
@@ -150,7 +151,7 @@ app.put("/update/:productId", upload.single("image"), async (req, res) => {
 });
 
 // Start Server
-const PORT = process.env.PORT || 5000;
+const PORT =  5000;
 app.listen(PORT, "0.0.0.0", () =>
   console.log(`Server running on port ${PORT}`)
 );
