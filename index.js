@@ -20,7 +20,7 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://10.254.201.27:3000"],
+    origin: ["*"],
   })
 );
 
